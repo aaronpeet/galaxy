@@ -41,6 +41,7 @@ export class GalaxysController extends BaseController {
 
   async edit(req, res, next) {
     try {
+      req.body.id = req.params.id
       const galaxy = await galaxysService.edit(req.body)
       res.send(galaxy)
     } catch (error) {
